@@ -1,0 +1,36 @@
+{
+  "name": "saveupnow",
+  "version": "1.0.0",
+  "description": "SaveUpNow — Personal Savings App",
+  "main": "electron/main.js",
+  "scripts": {
+    "start":   "electron .",
+    "build":   "npm run build --prefix frontend",
+    "package": "npm run build && electron-builder"
+  },
+  "build": {
+    "appId": "com.saveupnow.app",
+    "productName": "SaveUpNow",
+    "copyright": "SaveUpNow",
+    "directories": {
+      "output": "app-dist"
+    },
+    "extraResources": [
+      { "from": "backend",      "to": "backend"      },
+      { "from": "frontend/dist","to": "frontend/dist" }
+    ],
+    "win": {
+      "target": [{ "target": "portable", "arch": ["x64"] }],
+      "icon": "electron/icon.ico",
+      "signAndEditExecutable": false
+    },
+    "portable": {
+      "artifactName": "SaveUpNow.exe"
+    },
+    "forceCodeSigning": false
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^25.0.0"
+  }
+}

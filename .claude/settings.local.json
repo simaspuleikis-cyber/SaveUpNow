@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pandoc --track-changes=all \"C:\\\\Users\\\\pulsi\\\\Downloads\\\\Copy of SaveUpNow \\(2\\).docx\" -o \"C:\\\\Users\\\\pulsi\\\\Downloads\\\\saveupnow_content.md\")",
+      "Read(//c/Users/pulsi/Downloads/**)",
+      "Bash(python \"C:\\\\Users\\\\pulsi\\\\AppData\\\\Roaming\\\\Claude\\\\local-agent-mode-sessions\\\\skills-plugin\\\\2eb75ccd-cbcd-4efa-aa58-d73e088c6cd8\\\\3ba735b8-e7b1-4a9c-9c6e-3e3a608a19a0\\\\skills\\\\docx\\\\scripts\\\\office\\\\unpack.py\" \"C:\\\\Users\\\\pulsi\\\\Downloads\\\\Copy of SaveUpNow \\(2\\).docx\" \"C:\\\\Users\\\\pulsi\\\\Downloads\\\\saveupnow_unpacked\")",
+      "Bash(python3 \"C:\\\\Users\\\\pulsi\\\\AppData\\\\Roaming\\\\Claude\\\\local-agent-mode-sessions\\\\skills-plugin\\\\2eb75ccd-cbcd-4efa-aa58-d73e088c6cd8\\\\3ba735b8-e7b1-4a9c-9c6e-3e3a608a19a0\\\\skills\\\\docx\\\\scripts\\\\office\\\\unpack.py\" \"C:\\\\Users\\\\pulsi\\\\Downloads\\\\Copy of SaveUpNow \\(2\\).docx\" \"C:\\\\Users\\\\pulsi\\\\Downloads\\\\saveupnow_unpacked\")",
+      "Bash(where py:*)",
+      "Bash(where python3:*)",
+      "Bash(where python:*)",
+      "Read(//usr/**)",
+      "Read(//usr/local/**)",
+      "Bash(py -3 \"C:\\\\Users\\\\pulsi\\\\AppData\\\\Roaming\\\\Claude\\\\local-agent-mode-sessions\\\\skills-plugin\\\\2eb75ccd-cbcd-4efa-aa58-d73e088c6cd8\\\\3ba735b8-e7b1-4a9c-9c6e-3e3a608a19a0\\\\skills\\\\docx\\\\scripts\\\\office\\\\unpack.py\" \"C:\\\\Users\\\\pulsi\\\\Downloads\\\\Copy of SaveUpNow \\(2\\).docx\" \"C:\\\\Users\\\\pulsi\\\\Downloads\\\\saveupnow_unpacked\")",
+      "Bash(cmd.exe /c \"py -3 \\\\\"C:\\\\Users\\\\pulsi\\\\AppData\\\\Roaming\\\\Claude\\\\local-agent-mode-sessions\\\\skills-plugin\\\\2eb75ccd-cbcd-4efa-aa58-d73e088c6cd8\\\\3ba735b8-e7b1-4a9c-9c6e-3e3a608a19a0\\\\skills\\\\docx\\\\scripts\\\\office\\\\unpack.py\\\\\" \\\\\"C:\\\\\\\\Users\\\\\\\\pulsi\\\\\\\\Downloads\\\\\\\\Copy of SaveUpNow \\(2\\).docx\\\\\" \\\\\"C:\\\\\\\\Users\\\\\\\\pulsi\\\\\\\\Downloads\\\\\\\\saveupnow_unpacked\\\\\"\")",
+      "Bash(cmd.exe /c \"dir \\\\\"C:\\\\\\\\Users\\\\\\\\pulsi\\\\\\\\Downloads\\\\\\\\saveupnow_unpacked\\\\\"\")",
+      "Bash(cmd.exe /c \"powershell -command \\\\\"Expand-Archive -Path 'C:\\\\\\\\Users\\\\\\\\pulsi\\\\\\\\Downloads\\\\\\\\Copy of SaveUpNow \\(2\\).docx' -DestinationPath 'C:\\\\\\\\Users\\\\\\\\pulsi\\\\\\\\Downloads\\\\\\\\saveupnow_unpacked' -Force; Write-Host 'Done'\\\\\"\")",
+      "Bash(cmd.exe /c \"powershell -NonInteractive -Command \\\\\"Expand-Archive -Path 'C:\\\\\\\\Users\\\\\\\\pulsi\\\\\\\\Downloads\\\\\\\\Copy of SaveUpNow \\(2\\).docx' -DestinationPath 'C:\\\\\\\\Users\\\\\\\\pulsi\\\\\\\\Downloads\\\\\\\\saveupnow_unpacked' -Force; Write-Output 'Done'\\\\\" 2>&1\")",
+      "Bash(cmd.exe /c \"dir \\\\\"C:\\\\\\\\Users\\\\\\\\pulsi\\\\\\\\Downloads\\\\\\\\\\\\\"\")",
+      "Bash(powershell.exe -NonInteractive -ExecutionPolicy Bypass -Command ':*)",
+      "WebFetch(domain:www.kavarskoglobosnamai.lt)",
+      "WebFetch(domain:gustastutoring.netlify.app)",
+      "WebFetch(domain:taktukas.lt)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(cmd.exe /c \"py -3 -m pip install fastapi uvicorn 2>&1 | tail -3\")",
+      "Bash(py -3 -m pip install fastapi uvicorn)",
+      "Bash(powershell.exe -Command \"cd 'C:\\\\Users\\\\pulsi\\\\Desktop\\\\SaveUpNow\\\\backend'; python -m pip install fastapi uvicorn 2>&1 | Select-Object -Last 4\")",
+      "Bash(powershell.exe -Command \"Get-Command python3,py,python -ErrorAction SilentlyContinue | Select-Object Name, Source\")",
+      "Bash(powershell.exe -Command \"& 'C:\\\\Users\\\\pulsi\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\python3.exe' -m pip install fastapi uvicorn 2>&1 | Select-Object -Last 4\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem 'C:\\\\Users\\\\pulsi\\\\AppData\\\\Local\\\\Programs\\\\Python' -ErrorAction SilentlyContinue | Select-Object Name; Get-ChildItem 'C:\\\\Python*' -ErrorAction SilentlyContinue | Select-Object Name; where.exe python 2>&1\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem 'C:\\\\Users\\\\pulsi\\\\AppData\\\\Local\\\\Programs' -ErrorAction SilentlyContinue | Select-Object Name\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem 'C:\\\\' -Filter 'python*.exe' -Recurse -ErrorAction SilentlyContinue -Depth 4 | Select-Object FullName | Select-Object -First 10\")",
+      "Bash(powershell.exe -Command \"where.exe uvicorn 2>&1; where.exe pip 2>&1; Get-Command uvicorn -ErrorAction SilentlyContinue\")",
+      "Bash(powershell.exe -Command \"where.exe conda 2>&1; where.exe pip3 2>&1; Get-ChildItem 'C:\\\\Users\\\\pulsi\\\\AppData\\\\Local' -Filter '*python*' -Recurse -Depth 2 -ErrorAction SilentlyContinue | Select-Object FullName\")",
+      "Bash(powershell.exe -Command \"\\(New-Object System.Net.Sockets.TcpClient\\).ConnectAsync\\('localhost', 5173\\).Wait\\(500\\)\")",
+      "Bash(powershell.exe -Command \"Start-Process cmd -ArgumentList '/k cd /d C:\\\\Users\\\\pulsi\\\\Desktop\\\\SaveUpNow\\\\frontend && npm run dev' -WindowStyle Normal\")",
+      "Bash(powershell.exe -Command \"\\(New-Object System.Net.Sockets.TcpClient\\).ConnectAsync\\('localhost', 5173\\).Wait\\(1500\\)\")"
+    ]
+  }
+}

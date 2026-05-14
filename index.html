@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SaveUpNow — Personal Saving Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">S</div>
+      <div>
+        <div class="brand-name">SaveUpNow</div>
+        <div class="brand-sub" id="brandSub">Free saving plan. Simple. Smarter.</div>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button class="btn btn-ghost" id="btnExport" type="button">Export</button>
+      <button class="btn btn-ghost" id="btnReset" type="button">Reset</button>
+    </div>
+  </header>
+
+  <main id="main" class="layout">
+    <!-- LEFT: product landing -->
+    <section class="panel panel-left">
+
+      <!-- Hero eyebrow badge -->
+      <div class="hero-badge" data-animate>
+        <span class="hero-badge-dot"></span>
+        <span id="heroBadge">Free · Private · Open</span>
+      </div>
+
+      <!-- Hero headline -->
+      <h1 id="leftTitle" data-animate>Build your <span class="accent-word">savings habit</span></h1>
+
+      <p class="hero-lead muted" id="leftIntro" data-animate>
+        SaveUpNow gives you a personal saving plan based on your income and goals.
+        Free forever, private by design — your data never leaves your browser.
+      </p>
+
+      <!-- Stats row -->
+      <div class="hero-stats" data-animate>
+        <div class="hero-stat">
+          <div class="hero-stat-val">100%</div>
+          <div class="hero-stat-lbl" id="stat1">Free</div>
+        </div>
+        <div class="hero-stat-div"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">0</div>
+          <div class="hero-stat-lbl" id="stat2">Servers</div>
+        </div>
+        <div class="hero-stat-div"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">∞</div>
+          <div class="hero-stat-lbl" id="stat3">Goals</div>
+        </div>
+      </div>
+
+      <!-- Feature list (replaces 3-col grid) -->
+      <div class="features" data-animate>
+        <div class="feature-item">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <div class="feature-title" id="c1t">100% free, forever</div>
+            <div class="feature-text" id="c1d">No subscriptions, no hidden fees, no limits.</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+          <div>
+            <div class="feature-title" id="c2t">Code login</div>
+            <div class="feature-text" id="c2d">Unlock with a personal code — no email required.</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="feature-title" id="c3t">Age verified</div>
+            <div class="feature-text" id="c3d">Upload an ID to confirm your age once and start saving.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- How it works -->
+      <div class="section-eyebrow" id="howTitle" data-animate>How it works</div>
+      <ol class="steps" id="howSteps" data-animate>
+        <li>Create your account using a unique unlock code.</li>
+        <li>Upload a document for age verification.</li>
+        <li>Enter your income, expenses, and savings goal.</li>
+        <li>Log savings and track your monthly progress.</li>
+        <li>Use the bottom menu: Wallet, Home, Settings.</li>
+      </ol>
+
+      <div class="info-box" id="tipText" data-animate>
+        Your data is stored only in your browser. Nothing is sent to any server.
+      </div>
+
+      <footer class="footnote">
+        <span>© SaveUpNow</span>
+        <span class="dot">•</span>
+        <span id="footNote">All data stays in your browser (localStorage)</span>
+      </footer>
+    </section>
+
+    <!-- RIGHT: phone mock -->
+    <section class="panel panel-right" aria-label="SaveUpNow app preview">
+      <div class="phone">
+        <div class="phone-notch" aria-hidden="true"></div>
+
+        <div class="screen" role="application" aria-label="SaveUpNow screen">
+          <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+          <!-- ── AUTH / ONBOARDING ── -->
+          <section class="view" id="viewAuth" data-view="auth">
+            <div class="screen-header screen-header-auth">
+              <div class="screen-title" id="authTitle">Welcome</div>
+              <div class="screen-sub" id="authSub">Create or sign into your account</div>
+            </div>
+
+            <div class="card">
+              <h3 id="codeTitle">Unlock code</h3>
+              <p class="muted small" id="codeDesc">
+                Your code is your key. Keep it safe — it unlocks your account.
+              </p>
+
+              <label class="field">
+                <span id="codeLabel">Code</span>
+                <input id="unlockCodeInput" inputmode="numeric" placeholder="Enter your code" maxlength="12" />
+              </label>
+
+              <div class="row row-actions">
+                <button class="btn btn-primary" id="btnStart" type="button">Continue</button>
+                <button class="btn btn-ghost" id="btnGenerateCode" type="button">Generate code</button>
+              </div>
+
+              <div class="hint" id="codeHintAuth">
+                New here? Generate a code and keep it somewhere safe.
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 id="verifyTitle">Age verification</h3>
+              <p class="muted small" id="verifyDesc">Upload a government ID or proof of age document.</p>
+
+              <label class="upload">
+                <input id="idUpload" type="file" accept="image/*,.pdf" />
+                <div class="upload-ui">
+                  <div class="upload-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  </div>
+                  <div class="upload-title" id="uploadTitle">Upload document</div>
+                  <div class="upload-sub" id="uploadSub">No file selected</div>
+                </div>
+              </label>
+
+              <div class="badge-row">
+                <span class="badge" id="badgeVerified">Not verified</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 id="setupTitle">Saving goal</h3>
+              <div class="grid2">
+                <label class="field">
+                  <span id="incomeLabel">Monthly income (€)</span>
+                  <input id="incomeInput" inputmode="decimal" placeholder="0.00" />
+                </label>
+                <label class="field">
+                  <span id="expensesLabel">Monthly expenses (€)</span>
+                  <input id="expensesInput" inputmode="decimal" placeholder="0.00" />
+                </label>
+              </div>
+
+              <div class="grid2">
+                <label class="field">
+                  <span id="goalLabel">Goal amount (€)</span>
+                  <input id="goalInput" inputmode="decimal" placeholder="0.00" />
+                </label>
+                <label class="field">
+                  <span id="goalNameLabel">Goal name</span>
+                  <input id="goalNameInput" placeholder="e.g. Emergency fund" />
+                </label>
+              </div>
+
+              <button class="btn btn-primary" id="btnSaveSetup" type="button">Save &amp; continue</button>
+              <p class="muted small" id="setupNote"></p>
+            </div>
+          </section>
+
+          <!-- ── HOME / DASHBOARD ── -->
+          <section class="view hidden" id="viewHome" data-view="home">
+            <div class="screen-header screen-header-grad">
+              <div class="screen-title" id="homeTitle">Home</div>
+              <div class="screen-sub" id="homeSubtitle">Your monthly progress</div>
+            </div>
+
+            <!-- Streak row -->
+            <div class="streak-row" id="streakRow">
+              <div class="streak-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="#f97316" aria-hidden="true"><path d="M13.5 0.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5 0.67z"/></svg>
+                <div class="streak-val streak-fire" id="streakCurrent">0</div>
+                <div class="streak-lbl" id="streakLbl">streak</div>
+              </div>
+              <div class="streak-div"></div>
+              <div class="streak-item">
+                <div class="streak-val" id="streakBestVal">0</div>
+                <div class="streak-lbl" id="streakBestLbl">best</div>
+              </div>
+              <div class="streak-div"></div>
+              <div class="streak-item">
+                <div class="streak-val" id="txTotal">0</div>
+                <div class="streak-lbl" id="txTotalLbl">saves</div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="kpi">
+                <div>
+                  <div class="kpi-label" id="savedMonthLabel">Saved this month</div>
+                  <div class="kpi-value" id="savedThisMonth">€0</div>
+                </div>
+
+                <div class="ring" aria-label="Progress ring">
+                  <svg viewBox="0 0 120 120" role="img" aria-label="Goal progress">
+                    <defs>
+                      <linearGradient id="ringGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="120" y2="120">
+                        <stop offset="0%" stop-color="#818cf8"/>
+                        <stop offset="100%" stop-color="#c084fc"/>
+                      </linearGradient>
+                      <linearGradient id="ringGradComplete" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="120" y2="120">
+                        <stop offset="0%" stop-color="#34d399"/>
+                        <stop offset="100%" stop-color="#059669"/>
+                      </linearGradient>
+                    </defs>
+                    <circle class="ring-bg" cx="60" cy="60" r="46"></circle>
+                    <circle class="ring-fg" cx="60" cy="60" r="46" id="progressCircle"></circle>
+                  </svg>
+                  <div class="ring-text">
+                    <div class="ring-pct" id="progressPct">0%</div>
+                    <div class="ring-sub" id="ringSub">of goal</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="motivation" id="motivationText">Set a goal to track your saving progress.</div>
+
+              <div class="mini">
+                <div class="mini-item">
+                  <div class="mini-label" id="goalMiniLabel">Goal</div>
+                  <div class="mini-value" id="goalValue">—</div>
+                </div>
+                <div class="mini-item">
+                  <div class="mini-label" id="remainingMiniLabel">Remaining</div>
+                  <div class="mini-value" id="remainingValue">—</div>
+                </div>
+                <div class="mini-item">
+                  <div class="mini-label" id="totalSavedMiniLabel">Total saved</div>
+                  <div class="mini-value" id="totalSavedMini">—</div>
+                </div>
+                <div class="mini-item">
+                  <div class="mini-label" id="entriesLabel">Entries</div>
+                  <div class="mini-value" id="entriesCount">0</div>
+                </div>
+              </div>
+
+              <!-- Monthly history chart -->
+              <div class="chart-wrap">
+                <div class="chart-hdr"><span id="chartLabel">Monthly savings</span></div>
+                <svg id="chartSvg" class="chart-svg" viewBox="0 0 260 76" aria-hidden="true"></svg>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 id="actionsTitle">Add savings</h3>
+
+              <!-- Quick-add presets -->
+              <div class="quick-amounts" id="quickAmounts">
+                <button class="btn btn-quick" data-quick="5"   type="button">+€5</button>
+                <button class="btn btn-quick" data-quick="10"  type="button">+€10</button>
+                <button class="btn btn-quick" data-quick="25"  type="button">+€25</button>
+                <button class="btn btn-quick" data-quick="50"  type="button">+€50</button>
+                <button class="btn btn-quick" data-quick="100" type="button">+€100</button>
+              </div>
+
+              <div class="save-form">
+                <label class="field">
+                  <span id="addAmountLabel">Amount (€)</span>
+                  <input id="addAmountInput" inputmode="decimal" placeholder="0.00" />
+                </label>
+                <label class="field">
+                  <span id="addNoteLabel">Note (optional)</span>
+                  <input id="addNoteInput" placeholder="e.g. Weekly savings" />
+                </label>
+                <button class="btn btn-primary" id="btnAddAmount" type="button">Add</button>
+              </div>
+
+              <div class="plan" id="planBox">
+                <div class="plan-title" id="planTitle">Saving plan</div>
+                <div class="plan-body" id="planText">—</div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 id="txTitle">Recent transactions</h3>
+              <div id="transactionList"></div>
+              <div class="empty-state" id="transactionEmpty">No transactions logged yet.</div>
+              <button class="show-all-btn hidden" id="btnShowAllTx" type="button">
+                <span id="showAllTxLabel">View all transactions</span>
+              </button>
+            </div>
+
+            <div class="spacer"></div>
+          </section>
+
+          <!-- ── WALLET ── -->
+          <section class="view hidden" id="viewWallet" data-view="wallet">
+            <div class="screen-header screen-header-grad">
+              <div class="screen-title" id="walletTitle">Wallet</div>
+              <div class="screen-sub" id="walletSub">Overview and card</div>
+            </div>
+
+            <div class="card">
+              <div class="kpi compact">
+                <div>
+                  <div class="kpi-label" id="savedTotalLabel">Total saved</div>
+                  <div class="kpi-value" id="savedTotal">€0</div>
+                </div>
+                <div class="pill" id="monthlyPill">This month: €0</div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 id="cardTitle">Card details</h3>
+              <p class="muted small" id="cardDesc">Personalise your account card.</p>
+
+              <div class="mock-card" aria-label="Account card">
+                <div class="mc-top">
+                  <div class="mc-brand">SaveUpNow</div>
+                  <div class="mc-chip" aria-hidden="true"></div>
+                </div>
+                <div class="mc-number" id="cardMasked">•••• •••• •••• 1234</div>
+                <div class="mc-bottom">
+                  <div>
+                    <div class="mc-label" id="cardNameLabel">Name</div>
+                    <div class="mc-value" id="cardName">User</div>
+                  </div>
+                  <div>
+                    <div class="mc-label" id="cardStatusLabel">Status</div>
+                    <div class="mc-value" id="cardStatus">Active</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid2">
+                <label class="field">
+                  <span id="cardNameInputLabel">Name on card</span>
+                  <input id="cardNameInput" placeholder="" />
+                </label>
+                <label class="field">
+                  <span id="cardLast4Label">Last 4 digits</span>
+                  <input id="cardLast4Input" inputmode="numeric" maxlength="4" placeholder="1234" />
+                </label>
+              </div>
+              <button class="btn btn-primary" id="btnSaveCard" type="button">Save card</button>
+            </div>
+
+            <div class="card">
+              <h3 id="friendsTitle">Saving with friends</h3>
+              <p class="muted small" id="friendsDesc">Monthly leaderboard — see how you compare.</p>
+
+              <div class="leaderboard" id="leaderboard"></div>
+
+              <div class="friend-add-form hidden" id="friendAddForm">
+                <label class="field friend-name-field">
+                  <span id="friendNameLabel">Friend name</span>
+                  <input id="friendNameInput" placeholder="Enter name" />
+                </label>
+                <div class="row row-actions friend-form-actions">
+                  <button class="btn btn-primary" id="btnConfirmAddFriend" type="button">Add</button>
+                  <button class="btn btn-ghost" id="btnCancelAddFriend" type="button">Cancel</button>
+                </div>
+              </div>
+
+              <div class="grid2" id="friendActions" style="margin-top:10px;">
+                <button class="btn btn-ghost" id="btnRandomizeFriends" type="button">Refresh amounts</button>
+                <button class="btn btn-ghost" id="btnAddFriend" type="button">Add friend</button>
+              </div>
+            </div>
+
+            <div class="spacer"></div>
+          </section>
+
+          <!-- ── SETTINGS ── -->
+          <section class="view hidden" id="viewSettings" data-view="settings">
+            <div class="screen-header screen-header-grad">
+              <div class="screen-title" id="settingsTitle">Settings</div>
+              <div class="screen-sub" id="settingsSub"></div>
+            </div>
+
+            <div class="card">
+              <div class="settings-list">
+                <button class="setting-item" id="btnAccount" type="button">
+                  <span id="accountRow">Your account</span><span class="chev">›</span>
+                </button>
+
+                <div class="setting-item setting-static" id="langPickerRow">
+                  <span id="langLabel">Language</span>
+                  <button class="pill" id="btnLangPill" type="button" aria-label="Language picker">
+                    <span id="langPillValue">English</span>
+                    <span class="pill-caret" aria-hidden="true">▾</span>
+                  </button>
+                </div>
+
+                <button class="setting-item" id="btnPrivacy" type="button">
+                  <span id="privacyRow">Privacy policy</span><span class="chev">›</span>
+                </button>
+
+                <button class="setting-item" id="btnLoginMethods" type="button">
+                  <span id="loginRow">Login methods</span><span class="chev" id="loginRowValue">Code</span>
+                </button>
+
+                <!-- Dark mode toggle -->
+                <div class="setting-item setting-static">
+                  <div>
+                    <div class="label-strong" id="darkModeLabel">Dark mode</div>
+                    <div class="muted small" id="darkModeSub">Switch to dark theme</div>
+                  </div>
+                  <label class="switch">
+                    <input id="darkModeToggle" type="checkbox" />
+                    <span class="slider"></span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="picker hidden" id="langPicker" role="dialog" aria-label="Language picker">
+                <div class="picker-list" id="langPickerList"></div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 id="remindersTitle">Reminders</h3>
+              <p class="muted small" id="remindersDesc">
+                Get scheduled notifications to stay on track.
+              </p>
+
+              <div class="grid2">
+                <button class="btn btn-ghost" id="btnEnableNotifications" type="button">
+                  Enable notifications
+                </button>
+                <span class="badge badge-big" id="notifBadge">Off</span>
+              </div>
+
+              <div class="divider" style="margin:12px 0;"></div>
+
+              <div class="row" style="justify-content:space-between; align-items:center;">
+                <div>
+                  <div class="label-strong" id="remindersOnLabel">Reminders enabled</div>
+                  <div class="muted small" id="remindersOnSub">Receive scheduled saving reminders.</div>
+                </div>
+                <label class="switch">
+                  <input id="remindersEnabled" type="checkbox" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+
+              <div style="margin-top:12px;">
+                <div class="setting-item setting-static" style="margin-top:10px;">
+                  <span id="everyLabel">Repeat</span>
+                  <button class="pill" id="btnEveryPill" type="button" aria-label="Reminder frequency picker">
+                    <span id="everyPillValue">Every 1 day</span>
+                    <span class="pill-caret" aria-hidden="true">▾</span>
+                  </button>
+                </div>
+
+                <div class="picker hidden" id="everyPicker" role="dialog" aria-label="Reminder frequency picker">
+                  <div class="picker-list" id="everyPickerList"></div>
+                </div>
+
+                <div class="hint" id="timesHint" style="margin-top:10px;">
+                  Reminders at 10:00 and 18:00
+                </div>
+
+                <div class="hint" id="nextHint" style="margin-top:10px;">
+                  Next: —
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 id="securityTitle">Account security</h3>
+              <div class="grid2">
+                <button class="btn btn-ghost" id="btnShowCode" type="button">Show code</button>
+                <button class="btn btn-ghost" id="btnLock" type="button">Lock account</button>
+              </div>
+              <div class="hint" id="codeHint">—</div>
+            </div>
+
+            <div class="card">
+              <h3 id="goalPlanTitle">Goal &amp; plan</h3>
+              <div class="grid2">
+                <label class="field">
+                  <span id="goalEditLabel">Goal (€)</span>
+                  <input id="goalEditInput" inputmode="decimal" placeholder="0.00" />
+                </label>
+                <label class="field">
+                  <span id="goalNameEditLabel">Goal name</span>
+                  <input id="goalNameEditInput" placeholder="" />
+                </label>
+              </div>
+
+              <div class="grid2">
+                <label class="field">
+                  <span id="incomeEditLabel">Income (€)</span>
+                  <input id="incomeEditInput" inputmode="decimal" placeholder="0.00" />
+                </label>
+                <label class="field">
+                  <span id="expensesEditLabel">Expenses (€)</span>
+                  <input id="expensesEditInput" inputmode="decimal" placeholder="0.00" />
+                </label>
+              </div>
+
+              <button class="btn btn-primary" id="btnSaveSettings" type="button">Save changes</button>
+              <p class="muted small" id="settingsSavedNote"></p>
+            </div>
+
+            <div class="spacer"></div>
+          </section>
+
+          <!-- Bottom nav -->
+          <nav class="bottom-nav" aria-label="Navigation">
+            <button class="nav-btn" data-nav="wallet" id="navWallet" type="button" aria-label="Wallet">
+              <svg class="nav-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                <line x1="1" y1="10" x2="23" y2="10"/>
+              </svg>
+              <span class="nav-txt" id="navWalletTxt">Wallet</span>
+            </button>
+
+            <button class="nav-btn active" data-nav="home" id="navHome" type="button" aria-label="Home">
+              <svg class="nav-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+              <span class="nav-txt" id="navHomeTxt">Home</span>
+            </button>
+
+            <button class="nav-btn" data-nav="settings" id="navSettings" type="button" aria-label="Settings">
+              <svg class="nav-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
+              </svg>
+              <span class="nav-txt" id="navSettingsTxt">Settings</span>
+            </button>
+          </nav>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
